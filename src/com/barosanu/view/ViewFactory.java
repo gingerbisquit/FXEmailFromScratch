@@ -3,6 +3,7 @@ package com.barosanu.view;
 import com.barosanu.EmailManager;
 import com.barosanu.controller.BaseController;
 import com.barosanu.controller.LoginWindowController;
+import com.barosanu.controller.OptionsWindowController;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -29,8 +30,14 @@ public class ViewFactory {
         System.out.println("main window called");
         BaseController controller = new LoginWindowController(emailManager, this,"MainWindow.fxml");
         initializeStage(controller);
-
     }
+
+    public void showOptionsWindow(){
+        System.out.println("options window called");
+        BaseController controller = new OptionsWindowController(emailManager, this, "OptionsWindow.fxml");
+        initializeStage(controller);
+    }
+
 
     private void initializeStage(BaseController baseController){
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(baseController.getFxmlName()));
