@@ -5,5 +5,6 @@ module FXEmailFromScratch {
     requires javafx.web;
 
     opens com.barosanu;
+    opens com.barosanu.view;
 
 }
